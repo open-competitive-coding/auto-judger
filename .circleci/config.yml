@@ -34,10 +34,10 @@ workflows:
       - build:
         filters:
           branches:
-              ignore:
-                - master
+            ignore:
+              - master
       - build-master:
         filters:
           branches:
-              only:
-                - master
+            only:
+              - master
