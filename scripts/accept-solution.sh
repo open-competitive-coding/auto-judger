@@ -34,7 +34,7 @@ echo $CIRCLE_JOB
 # then
     echo "Inside CircleCI YO"
     echo $JUGDE_PRIVATE_KEY > $JUDGE_PRIVATE_KEY_BASE64
-    openssl enc -base64 -d -in $JUDGE_PRIVATE_KEY_BASE64 -out $JUDGE_PRIVATE_KEY_FILE_NAME
+    openssl enc -base64 -d -A -in $JUDGE_PRIVATE_KEY_BASE64 -out $JUDGE_PRIVATE_KEY_FILE_NAME
 # fi
 
 # Let's first decrypt the user's private key.
