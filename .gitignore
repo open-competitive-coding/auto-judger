@@ -5,7 +5,8 @@ solution/*
 !solution/README.md
 !solution/example.c
 
-judge-private-key.txt
+judge-private-key*.txt
 user-key.txt
+user-key-dec.txt
 *.dec
 .DS_Store

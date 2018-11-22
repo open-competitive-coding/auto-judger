@@ -13,3 +13,5 @@ clean:
 	mkdir solution
 	mv ../README.md solution/ || true
 	mv ../example.c solution/ || true
+install:
+	sudo apt-get install pwgen

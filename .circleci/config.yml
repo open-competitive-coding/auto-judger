@@ -7,9 +7,12 @@ jobs:
       - image: circleci/python:2.7
     steps:
       - checkout
+      - run: make install
       - run:
           name: "Testing the example submit"
-          command: "make submit solution-file=solution/example.c"
+          command: "make accept"
+      - store_artifacts:
+          path: .
 workflows:
   version: 2
   build:
