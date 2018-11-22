@@ -32,12 +32,12 @@ workflows:
   build:
     jobs:
       - build:
-        filters:
-          branches:
-            ignore:
-              - master
+          filters:
+              branches:
+                  ignore:
+                      - master
       - build-master:
-        filters:
-          branches:
-            only:
-              - master
+          filters:
+              branches:
+                  only:
+                      - master
