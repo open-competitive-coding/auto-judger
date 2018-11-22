@@ -1,0 +1,17 @@
+# trigger build
+version: 2
+debug: true
+jobs:
+  build:
+    docker:
+      - image: circleci/python:2.7
+    steps:
+      - checkout
+      - run:
+          name: "Testing the example submit"
+          command: "make submit solution-file=solution/example.c"
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build

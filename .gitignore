@@ -1,0 +1,11 @@
+# We ignore all the files in solution/ folder except for the .enc file. Which will the encrypted solution.
+solution/*
+!solution/*.enc
+!solution/solution-file-name.txt
+!solution/README.md
+!solution/example.c
+
+judge-private-key.txt
+user-key.txt
+*.dec
+.DS_Store
