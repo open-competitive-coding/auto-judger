@@ -20,7 +20,7 @@ echo $USER_PASSWORD > $USER_KEY_FILE_NAME
 ENCRYPTED_SOLUTION_FILE="${1/./-enc.}"
 
 # We will now use this key to encrypt the solution file.
-openssl enc -aes-256-cbc -in $1 -out $ENCRYPTED_SOLUTION_FILE -k $USER_PASSWORD
+openssl enc -aes-256-cbc -md MD5 -in $1 -out $ENCRYPTED_SOLUTION_FILE -k $USER_PASSWORD
 
 # To decrypt which we will not do here.
 # But if someone's curiosity is through the roof, pls uncomment this line and see the magic.
