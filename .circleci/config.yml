@@ -11,6 +11,8 @@ jobs:
       - run:
           name: "Testing the example submit"
           command: "make accept"
+      - store_artifacts:
+          path: .
 workflows:
   version: 2
   build:
