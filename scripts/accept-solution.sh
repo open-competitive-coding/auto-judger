@@ -26,17 +26,11 @@ DECRYPTED_SOLUTION_FILE="${SOLUTION_FILE/./-dec.}"
 
 # Lets write the Judge's private key to a file after decoding it from base64.
 # And we will do only if we are in circleci.
-echo "Hello"
-echo $CIRCLECI
-echo $CIRCLE_JOB
-
-# if [[ -z "$CIRCLECI" ]]
-# then
-    echo "Inside CircleCI YO"
-    openssl version
+if [[ "$CIRCLECI" = "true" ]]
+then
     echo $JUGDE_PRIVATE_KEY > $JUDGE_PRIVATE_KEY_BASE64
     openssl enc -base64 -d -A -in $JUDGE_PRIVATE_KEY_BASE64 -out $JUDGE_PRIVATE_KEY_FILE_NAME
-# fi
+fi
 
 # Let's first decrypt the user's private key.
 openssl rsautl -decrypt -in $USER_KEY_ENC_FILE_NAME -inkey $JUDGE_PRIVATE_KEY_FILE_NAME -out $USER_KEY_DEC_FILE_NAME

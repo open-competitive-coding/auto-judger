@@ -7,5 +7,6 @@ solution/*
 
 judge-private-key*.txt
 user-key.txt
+user-key-dec.txt
 *.dec
 .DS_Store
