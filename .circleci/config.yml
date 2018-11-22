@@ -10,7 +10,7 @@ jobs:
       - run: make install
       - run:
           name: "Testing the example submit"
-          command: "make submit solution-file=solution/example.c"
+          command: "make accept"
 workflows:
   version: 2
   build:

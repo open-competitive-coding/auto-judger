@@ -24,9 +24,14 @@ SOLUTION_FILE=$(cat $SOLUTION_FILE_NAME)
 ENCRYPTED_SOLUTION_FILE="${SOLUTION_FILE/./-enc.}"
 DECRYPTED_SOLUTION_FILE="${SOLUTION_FILE/./-dec.}"
 
+# Lets write the Judge's private key to a file after decoding it from base64.
+# And we will do only if we are in circleci.
+if [[ -z "${CIRCLECI}" ]]; then
+    echo $JUGDE_PRIVATE_KEY > $JUDGE_PRIVATE_KEY_BASE64
+    openssl enc -base64 -d -in $JUDGE_PRIVATE_KEY_BASE64 -out $JUDGE_PRIVATE_KEY
+fi
+
 # Let's first decrypt the user's private key.
-echo $USER_KEY_ENC_FILE_NAME
-echo $USER_KEY_DEC_FILE_NAME
 openssl rsautl -decrypt -in $USER_KEY_ENC_FILE_NAME -inkey $JUDGE_PRIVATE_KEY -out $USER_KEY_DEC_FILE_NAME
 
 # Now we will use this key to decrypt the user's solution.
