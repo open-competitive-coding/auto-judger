@@ -7,6 +7,7 @@ jobs:
       - image: circleci/python:2.7
     steps:
       - checkout
+      - run: make install
       - run:
           name: "Testing the example submit"
           command: "make submit solution-file=solution/example.c"
