@@ -30,7 +30,7 @@ echo "Hello"
 echo $CIRCLECI
 echo $CIRCLE_JOB
 
-if [[ -z "${CIRCLECI}" ]]; then
+if [[ -z "$CIRCLECI" ]]; then
     echo "Inside CircleCI YO"
     echo $JUGDE_PRIVATE_KEY > $JUDGE_PRIVATE_KEY_BASE64
     openssl enc -base64 -d -in $JUDGE_PRIVATE_KEY_BASE64 -out $JUDGE_PRIVATE_KEY
