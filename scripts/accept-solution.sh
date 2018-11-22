@@ -26,6 +26,10 @@ DECRYPTED_SOLUTION_FILE="${SOLUTION_FILE/./-dec.}"
 
 # Lets write the Judge's private key to a file after decoding it from base64.
 # And we will do only if we are in circleci.
+echo "Hello"
+echo $CIRCLECI
+echo $CIRCLE_JOB
+
 if [[ -z "${CIRCLECI}" ]]; then
     echo "Inside CircleCI YO"
     echo $JUGDE_PRIVATE_KEY > $JUDGE_PRIVATE_KEY_BASE64
