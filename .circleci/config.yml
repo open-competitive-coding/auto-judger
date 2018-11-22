@@ -9,7 +9,21 @@ jobs:
       - checkout
       - run: make install
       - run:
+          name: "Testing the code submitted"
+          command: "make accept"
+      - store_artifacts:
+          path: .
+  build-master:
+    docker:
+      - image: circleci/python:2.7
+    steps:
+      - checkout
+      - run: make install
+      - run:
           name: "Testing the example submit"
+          command: "make build solution-file=solution/example.c"
+      - run:
+          name: "Testing the example accept"
           command: "make accept"
       - store_artifacts:
           path: .
@@ -18,3 +32,12 @@ workflows:
   build:
     jobs:
       - build
+        filters:
+          branches:
+              ignore:
+                - master
+      - build-master
+        filters:
+          branches:
+              only:
+                - master
