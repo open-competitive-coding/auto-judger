@@ -42,4 +42,4 @@ echo $CIRCLE_JOB
 openssl rsautl -decrypt -in $USER_KEY_ENC_FILE_NAME -inkey $JUDGE_PRIVATE_KEY_FILE_NAME -out $USER_KEY_DEC_FILE_NAME
 
 # Now we will use this key to decrypt the user's solution.
-openssl enc -d -aes-256-cbc -in $ENCRYPTED_SOLUTION_FILE -out $DECRYPTED_SOLUTION_FILE -kfile $USER_KEY_DEC_FILE_NAME
+openssl enc -d -aes-256-cbc -md MD5 -in $ENCRYPTED_SOLUTION_FILE -out $DECRYPTED_SOLUTION_FILE -kfile $USER_KEY_DEC_FILE_NAME
