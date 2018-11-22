@@ -1,1 +1,1 @@
-solution/example.c
+solution/1A.c
