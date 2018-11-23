@@ -3,7 +3,7 @@ solution/*
 !solution/*-enc*
 !solution/solution-file-name.txt
 !solution/README.md
-!solution/example.c
+!solution/example-A.c
 
 judge-private-key*.txt
 user-key.txt

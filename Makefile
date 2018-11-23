@@ -8,10 +8,10 @@ clean:
 	rm scripts/user-key-dec.txt || true
 
 	mv solution/README.md ../ || true
-	mv solution/example.c ../ || true
+	mv solution/example-A.c ../ || true
 	rm -rf solution/
 	mkdir solution
 	mv ../README.md solution/ || true
-	mv ../example.c solution/ || true
+	mv ../example-A.c solution/ || true
 install:
 	sudo apt-get install pwgen

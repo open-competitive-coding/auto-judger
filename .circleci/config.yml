@@ -21,7 +21,7 @@ jobs:
       - run: make install
       - run:
           name: "Testing the example submit"
-          command: "make submit solution-file=solution/example.c"
+          command: "make submit solution-file=solution/example-A.c"
       - run:
           name: "Testing the example accept"
           command: "make accept"
