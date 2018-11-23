@@ -38,10 +38,10 @@ jobs:
       - attach_workspace:
           at: .
       - run: git clone https://github.com/open-competitive-coding/website.git
-      - run: source scripts/constants.sh && SOLUTION_FILE=$(cat $SOLUTION_FILE_NAME | cut -f 1 -d '.') && cd website/ && python scripts/add-submission.py $CIRCLE_USERNAME $SOLUTION_FILE_NAME
-      - run: git add . && git commit -m "[CI] Updating Score"
-      - run: git config user.name "MadaraUchiha-314" && git config user.email "rohithr31@gmail.com"
-      - run: git push -q https://${GITHUB_PERSONAL_TOKEN}@github.com/open-competitive-coding/website.git master
+      - run: git config --global user.name "MadaraUchiha-314" && git config --global user.email "rohithr31@gmail.com"
+      - run: source scripts/constants.sh && SOLUTION_FILE=$(cat $SOLUTION_FILE_NAME | cut -f 1 -d '.' | sed 's/solution\///g') && cd website/ && python scripts/add-submission.py $CIRCLE_USERNAME $SOLUTION_FILE
+      - run: cd website/ && git add . && git commit -m "[CI] Updating Score"
+      - run: cd website/ && git push -q https://${GITHUB_PERSONAL_TOKEN}@github.com/open-competitive-coding/website.git master
       - store_artifacts:
           path: .
 workflows:
