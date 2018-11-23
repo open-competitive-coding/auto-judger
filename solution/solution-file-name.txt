@@ -1,1 +1,1 @@
-solution/example-B.c
+solution/1-A.c
