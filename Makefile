@@ -2,6 +2,8 @@ submit:
 	bash scripts/submit-solution.sh $(solution-file)
 accept:
 	bash scripts/accept-solution.sh
+compile:
+	bash scripts/compile-solution.sh
 clean:
 	rm scripts/user-key.txt || true
 	rm scripts/user-key-enc.txt || true
