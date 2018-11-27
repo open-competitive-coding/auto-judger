@@ -1,4 +1,4 @@
-# auto-judger
+# auto-judger [![CircleCI](https://circleci.com/gh/open-competitive-coding/auto-judger.svg?style=svg)](https://circleci.com/gh/open-competitive-coding/auto-judger)
 This is the auto-judge module of the [Open Competitive Coding] project. To solve any question defined in the [problem-set], one has to submit a pull request to this repository.
 
 ## Solving a question
