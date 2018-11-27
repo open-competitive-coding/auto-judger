@@ -6,3 +6,13 @@ export JUDGE_PUBLIC_KEY="scripts/judge-public-key.txt"
 export JUDGE_PRIVATE_KEY_FILE_NAME="scripts/judge-private-key.txt"
 export JUDGE_PRIVATE_KEY_BASE64="scripts/judge-private-key-base64.txt"
 export SOLUTION_FILE_NAME="solution/solution-file-name.txt"
+
+# Compilation, Execuation related constants
+export BINARY_DIRECTORY="solution/bin/"
+export EXECUTABLE_FILE="EXECUTABLE_FILE.out"
+
+# Languages.
+export C_LANG="c"
+export CPP_LANG="cpp"
+export JAVA_LANG="java"
+export PYTHON_LANG="py"

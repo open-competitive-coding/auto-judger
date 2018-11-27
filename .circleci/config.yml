@@ -31,6 +31,17 @@ jobs:
           command: "make accept"
       - store_artifacts:
           path: .
+  compile-and-execute:
+    docker:
+      - image: circleci/python:2.7
+    steps:
+      - run: bash scripts/compile-solution.sh
+      - store_artifacts:
+          path: .
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
   deploy-score:
     docker:
       - image: circleci/python:2.7
@@ -53,9 +64,12 @@ workflows:
               branches:
                   ignore:
                       - master
-      - deploy-score:
+      - compile-and-execute:
           requires:
               - build
+      - deploy-score:
+          requires:
+              - compile-and-execute
           filters:
               branches:
                   ignore:
