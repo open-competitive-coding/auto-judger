@@ -5,7 +5,7 @@ source scripts/constants.sh
 
 SOLUTION_FILE=$(cat $SOLUTION_FILE_NAME)
 DECRYPTED_SOLUTION_FILE="${SOLUTION_FILE/./-dec.}"
-LANGUAGE=$(echo $SOLUTION_FILE | awk -F . '{print $NF}') #This is to get the extension from the solution file name
+LANGUAGE=$(echo $SOLUTION_FILE | awk -F . '{print $NF}') # This is to get the extension from the solution file name
 echo $LANGUAGE
 
 # We will create the bin folder where all the executables will be stored.

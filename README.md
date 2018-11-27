@@ -2,11 +2,11 @@
 This is the auto-judge module of the [Open Competitive Coding] project. To solve any question defined in the [problem-set], one has to submit a pull request to this repository.
 
 ## Solving a question
-Choose any question from the [problem-set]. In the [solution/](./solution) folder create a file by the name of the problem. For e.g. if the problem name is `117A`, then create `117A.c` if you are solving in [C] or `117A.go` if you are solving in [golang]. See [supported programming languages](languages-supported/README.md) to see what all languages are supported.
+Choose any question from the [problem-set]. In the [solution/](./solution) folder create a file by the name of the problem. For e.g. if the problem name is `117-A`, then create `117-A.c` if you are solving in [C] or `117-A.go` if you are solving in [golang]. See [supported programming languages](languages-supported/README.md) to see what all languages are supported.
 
-Say you are have solved the question `example` by writing [example.c](./solution/example.c), then execute the following command :
+Say you are have solved the question `example-A` by writing [example.c](./solution/example-A.c), then execute the following command :
 ```bash
-make submit solution-file=solution/example.c
+make submit solution-file=solution/example-A.c
 ```
 
 Use `make clean` to clean up all the mess created.
